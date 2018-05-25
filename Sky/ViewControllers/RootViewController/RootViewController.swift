@@ -70,6 +70,7 @@ class RootViewController: UIViewController {
                     name: city,
                     latitude: currentLocation.coordinate.latitude,
                     longitude: currentLocation.coordinate.longitude)
+                self.currentWeatherViewController.location = l
             }
         }
     }
