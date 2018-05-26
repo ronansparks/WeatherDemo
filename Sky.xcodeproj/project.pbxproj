@@ -50,6 +50,7 @@
 		34E9D7A320B7BDA400009894 /* CurrentWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E9D7A220B7BDA400009894 /* CurrentWeatherViewController.swift */; };
 		34E9D7A520B7C00700009894 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E9D7A420B7C00700009894 /* Double.swift */; };
 		34F325AE20B981E1004A68D0 /* CurrentLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F325AD20B981E1004A68D0 /* CurrentLocationViewModel.swift */; };
+		34F325B020B99010004A68D0 /* CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F325AF20B99010004A68D0 /* CLLocationManager+Rx.swift */; };
 		6890B8121F7CC25500ACB755 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6890B8111F7CC25500ACB755 /* AppDelegate.swift */; };
 		6890B8141F7CC25500ACB755 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6890B8131F7CC25500ACB755 /* RootViewController.swift */; };
 		6890B8171F7CC25500ACB755 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6890B8151F7CC25500ACB755 /* Main.storyboard */; };
@@ -120,6 +121,7 @@
 		34E9D7A220B7BDA400009894 /* CurrentWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewController.swift; sourceTree = "<group>"; };
 		34E9D7A420B7C00700009894 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		34F325AD20B981E1004A68D0 /* CurrentLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewModel.swift; sourceTree = "<group>"; };
+		34F325AF20B99010004A68D0 /* CLLocationManager+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Rx.swift"; sourceTree = "<group>"; };
 		662C37290C47580F7D0D3651 /* Pods-Sky.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sky.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sky/Pods-Sky.debug.xcconfig"; sourceTree = "<group>"; };
 		6890B80E1F7CC25500ACB755 /* Sky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6890B8111F7CC25500ACB755 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 				34E9D79B20B793DB00009894 /* URLSessionDataTask.swift */,
 				34CF356220B83F3300EA5B4F /* UIImage.swift */,
 				34CF356F20B8F67500EA5B4F /* UserDefaults.swift */,
+				34F325AF20B99010004A68D0 /* CLLocationManager+Rx.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -721,6 +724,7 @@
 				34E9D7A120B7B97400009894 /* WeatherViewController.swift in Sources */,
 				34CF357020B8F67500EA5B4F /* UserDefaults.swift in Sources */,
 				34E9D7A320B7BDA400009894 /* CurrentWeatherViewController.swift in Sources */,
+				34F325B020B99010004A68D0 /* CLLocationManager+Rx.swift in Sources */,
 				34CF356C20B85BDB00EA5B4F /* ForecastData.swift in Sources */,
 				34CF356120B83E1D00EA5B4F /* CurrentWeatherViewModel.swift in Sources */,
 			);
