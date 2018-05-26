@@ -24,3 +24,5 @@ struct SettingsTemperatureViewModel {
         }
     }
 }
+
+extension SettingsTemperatureViewModel: SettingsRepresentable {}

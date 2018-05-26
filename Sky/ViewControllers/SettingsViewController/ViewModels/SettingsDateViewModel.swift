@@ -24,3 +24,5 @@ struct SettingsDateViewModel {
         }
     }
 }
+
+extension SettingsDateViewModel: SettingsRepresentable {}
