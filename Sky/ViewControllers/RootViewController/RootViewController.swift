@@ -8,17 +8,19 @@
 
 import UIKit
 import CoreLocation
+import RxSwift
+import RxCocoa
 
 class RootViewController: UIViewController {
     
     var currentWeatherViewController: CurrentWeatherViewController!
     var weekWeatherViewController: WeekWeatherViewController!
     
-    
     private let segueCurrentWeather = "SegueCurrentWeather"
     private let segueWeekWeather = "SegueWeekWeather"
     private let segueSettings  = "SegueSettings"
     private let segueLocations = "SegueLocations"
+    private var bag = DisposeBag()
     
     @IBAction func unwindToRootViewController(segue: UIStoryboardSegue) {
         
@@ -29,20 +31,22 @@ class RootViewController: UIViewController {
         
         switch identifier {
         case segueCurrentWeather:
+            
             guard let destination = segue.destination as? CurrentWeatherViewController else {
                 fatalError("Invalid destination view controller.")
             }
             
             destination.delegate = self
-            destination.viewModel = CurrentWeatherViewModel()
             currentWeatherViewController = destination
         case segueWeekWeather:
+            
             guard let destination = segue.destination as? WeekWeatherViewController else {
                 fatalError("Invalid destination view controller.")
             }
             
             weekWeatherViewController = destination
         case segueSettings:
+            
             guard let navigationController =
                 segue.destination as? UINavigationController else { fatalError("Invalid destination view controller") }
             
@@ -52,6 +56,7 @@ class RootViewController: UIViewController {
             
             destination.delegate = self
         case segueLocations:
+            
             guard let navigationController = segue.destination as? UINavigationController else {
                 fatalError("Invalid destination view controller")
             }
@@ -80,16 +85,20 @@ class RootViewController: UIViewController {
         let lat = currentLocation.coordinate.latitude
         let lon = currentLocation.coordinate.longitude
         
-        WeatherDataManager.shared.weatherDataAt(latitude: lat, longitude: lon) { (response, error) in
-            if let error = error {
-                dump(error)
-            }
-            else if let response = response {
-                // Notify currentWeatherViewController
-                self.currentWeatherViewController.viewModel?.weather = response
-                self.weekWeatherViewController.viewModel = WeekWeatherViewModel(weatherData: response.daily.data)
-            }
-        }
+        let weather = WeatherDataManager.shared
+            .weatherDataAt(latitude: lat, longitude: lon)
+            .share(replay: 1, scope: .whileConnected)
+            .observeOn(MainScheduler.instance)
+        
+        weather.map { CurrentWeatherViewModel(weather: $0) }
+            .bind(to: self.currentWeatherViewController.weatherVM)
+            .disposed(by: bag)
+        
+        weather.map { WeekWeatherViewModel(weatherData: $0.daily.data) }
+            .subscribe(onNext: {
+                self.weekWeatherViewController.viewModel = $0
+            })
+            .disposed(by: bag)
     }
     
     private func fetchCity() {
@@ -101,11 +110,12 @@ class RootViewController: UIViewController {
             }
             else if let city = placemarks?.first?.locality {
                 // Notify CurrentWeatherViewController
-                let l = Location(
+                let location = Location(
                     name: city,
                     latitude: currentLocation.coordinate.latitude,
                     longitude: currentLocation.coordinate.longitude)
-                self.currentWeatherViewController.viewModel?.location = l
+                
+                self.currentWeatherViewController.locationVM.accept(CurrentLocationViewModel(location: location))
             }
         }
     }

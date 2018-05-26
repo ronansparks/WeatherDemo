@@ -49,12 +49,14 @@
 		34E9D7A120B7B97400009894 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E9D7A020B7B97400009894 /* WeatherViewController.swift */; };
 		34E9D7A320B7BDA400009894 /* CurrentWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E9D7A220B7BDA400009894 /* CurrentWeatherViewController.swift */; };
 		34E9D7A520B7C00700009894 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E9D7A420B7C00700009894 /* Double.swift */; };
+		34F325AE20B981E1004A68D0 /* CurrentLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F325AD20B981E1004A68D0 /* CurrentLocationViewModel.swift */; };
 		6890B8121F7CC25500ACB755 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6890B8111F7CC25500ACB755 /* AppDelegate.swift */; };
 		6890B8141F7CC25500ACB755 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6890B8131F7CC25500ACB755 /* RootViewController.swift */; };
 		6890B8171F7CC25500ACB755 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6890B8151F7CC25500ACB755 /* Main.storyboard */; };
 		6890B8191F7CC25500ACB755 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6890B8181F7CC25500ACB755 /* Assets.xcassets */; };
 		6890B81C1F7CC25500ACB755 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6890B81A1F7CC25500ACB755 /* LaunchScreen.storyboard */; };
 		6890B8461F7CC4D700ACB755 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6890B8451F7CC4D700ACB755 /* Default-568h@2x.png */; };
+		7318938A4D7F2CE835994261 /* Pods_Sky.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E2E5499594E13C20A037C8 /* Pods_Sky.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +119,8 @@
 		34E9D7A020B7B97400009894 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		34E9D7A220B7BDA400009894 /* CurrentWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewController.swift; sourceTree = "<group>"; };
 		34E9D7A420B7C00700009894 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		34F325AD20B981E1004A68D0 /* CurrentLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewModel.swift; sourceTree = "<group>"; };
+		662C37290C47580F7D0D3651 /* Pods-Sky.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sky.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sky/Pods-Sky.debug.xcconfig"; sourceTree = "<group>"; };
 		6890B80E1F7CC25500ACB755 /* Sky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6890B8111F7CC25500ACB755 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6890B8131F7CC25500ACB755 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 		6890B82D1F7CC25500ACB755 /* SkyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6890B8331F7CC25500ACB755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6890B8451F7CC4D700ACB755 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		96E2E5499594E13C20A037C8 /* Pods_Sky.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sky.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3640F361F47BCC824DE138B /* Pods-Sky.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sky.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sky/Pods-Sky.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7318938A4D7F2CE835994261 /* Pods_Sky.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,10 +163,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BA444C0BEB5BA057397E1C3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				662C37290C47580F7D0D3651 /* Pods-Sky.debug.xcconfig */,
+				A3640F361F47BCC824DE138B /* Pods-Sky.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		34CF355F20B83E0400EA5B4F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				34CF356020B83E1D00EA5B4F /* CurrentWeatherViewModel.swift */,
+				34F325AD20B981E1004A68D0 /* CurrentLocationViewModel.swift */,
 				34CF356D20B85C3600EA5B4F /* WeekWeatherViewModel.swift */,
 				34CF357F20B913EB00EA5B4F /* WeekWeatherDayViewModel.swift */,
 			);
@@ -370,6 +387,8 @@
 				6890B8251F7CC25500ACB755 /* SkyTests */,
 				6890B8301F7CC25500ACB755 /* SkyUITests */,
 				6890B80F1F7CC25500ACB755 /* Products */,
+				1BA444C0BEB5BA057397E1C3 /* Pods */,
+				7471EE52240C16151A52B232 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -456,12 +475,20 @@
 		6890B8441F7CC3CF00ACB755 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				34E9D7A620B7CAA100009894 /* RootViewController */,
 				34CF359420B938F900EA5B4F /* LocationsViewController */,
 				34CF357120B8FB7E00EA5B4F /* SettingsViewController */,
-				34E9D7A620B7CAA100009894 /* RootViewController */,
 				34E9D79F20B7B93D00009894 /* WeatherViewControllers */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7471EE52240C16151A52B232 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				96E2E5499594E13C20A037C8 /* Pods_Sky.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -471,9 +498,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6890B8361F7CC25500ACB755 /* Build configuration list for PBXNativeTarget "Sky" */;
 			buildPhases = (
+				5EBE2E9BFF92654B523FC452 /* [CP] Check Pods Manifest.lock */,
 				6890B80A1F7CC25500ACB755 /* Sources */,
 				6890B80B1F7CC25500ACB755 /* Frameworks */,
 				6890B80C1F7CC25500ACB755 /* Resources */,
+				343563B8E53C0CA6067B53A3 /* [CP] Embed Pods Frameworks */,
+				F4B22563C166DAEB6F53716D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -597,6 +627,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		343563B8E53C0CA6067B53A3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Sky/Pods-Sky-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sky/Pods-Sky-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5EBE2E9BFF92654B523FC452 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Sky-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4B22563C166DAEB6F53716D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sky/Pods-Sky-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6890B80A1F7CC25500ACB755 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -619,6 +705,7 @@
 				34CF357920B90B9500EA5B4F /* SettingsDateViewModel.swift in Sources */,
 				34E9D78620B70A6100009894 /* Configuration.swift in Sources */,
 				34CF358020B913EB00EA5B4F /* WeekWeatherDayViewModel.swift in Sources */,
+				34F325AE20B981E1004A68D0 /* CurrentLocationViewModel.swift in Sources */,
 				34CF35A020B93B2800EA5B4F /* LocationRepresentable.swift in Sources */,
 				34CF357420B8FBAA00EA5B4F /* SettingsTableViewCell.swift in Sources */,
 				34E9D78B20B70C1900009894 /* WeatherData.swift in Sources */,
@@ -810,6 +897,7 @@
 		};
 		6890B8371F7CC25500ACB755 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 662C37290C47580F7D0D3651 /* Pods-Sky.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -828,6 +916,7 @@
 		};
 		6890B8381F7CC25500ACB755 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3640F361F47BCC824DE138B /* Pods-Sky.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

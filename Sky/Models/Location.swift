@@ -21,6 +21,9 @@ struct Location {
     var latitude: Double
     var longitude: Double
     
+    //empty model
+    static let empty = Location(name: "", latitude: 0, longitude: 0)
+    
     var location: CLLocation {
         return CLLocation(latitude: latitude, longitude: longitude)
     }
