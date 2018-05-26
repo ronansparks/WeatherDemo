@@ -135,6 +135,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gix-RP-KCV">
+                                <rect key="frame" x="169" y="112" width="37" height="30"/>
+                                <state key="normal" title="Retry">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mrM-PD-OW8">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="254"/>
                                 <subviews>
@@ -226,10 +232,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="mrM-PD-OW8" firstAttribute="leading" secondItem="nZx-7B-P4J" secondAttribute="leading" id="CEZ-NI-l3T"/>
+                            <constraint firstItem="gix-RP-KCV" firstAttribute="centerX" secondItem="nZx-7B-P4J" secondAttribute="centerX" id="CSZ-h2-4aL"/>
                             <constraint firstItem="2qF-Ry-4Wy" firstAttribute="centerX" secondItem="nZx-7B-P4J" secondAttribute="centerX" id="Iyu-d6-9ZJ"/>
                             <constraint firstAttribute="bottom" secondItem="mrM-PD-OW8" secondAttribute="bottom" id="V9g-Qv-UdZ"/>
                             <constraint firstAttribute="trailing" secondItem="mrM-PD-OW8" secondAttribute="trailing" id="esh-dx-PhP"/>
                             <constraint firstItem="G3d-kp-aAr" firstAttribute="centerX" secondItem="nZx-7B-P4J" secondAttribute="centerX" id="gH9-NP-RLq"/>
+                            <constraint firstItem="gix-RP-KCV" firstAttribute="centerY" secondItem="nZx-7B-P4J" secondAttribute="centerY" id="kJO-25-zae"/>
                             <constraint firstItem="2qF-Ry-4Wy" firstAttribute="centerY" secondItem="nZx-7B-P4J" secondAttribute="centerY" id="whc-M7-rnT"/>
                             <constraint firstItem="G3d-kp-aAr" firstAttribute="centerY" secondItem="nZx-7B-P4J" secondAttribute="centerY" id="ydN-IC-by7"/>
                             <constraint firstItem="mrM-PD-OW8" firstAttribute="top" secondItem="nZx-7B-P4J" secondAttribute="top" id="zHb-SV-kZB"/>
@@ -242,6 +250,7 @@
                         <outlet property="humidityLabel" destination="qqE-cv-X5A" id="Jsr-WI-fch"/>
                         <outlet property="loadingFailedLabel" destination="G3d-kp-aAr" id="zFy-th-Pll"/>
                         <outlet property="locationLabel" destination="Rv9-DG-Cds" id="4XI-We-UUL"/>
+                        <outlet property="retryBtn" destination="gix-RP-KCV" id="pXT-9t-e6Y"/>
                         <outlet property="summaryLabel" destination="58s-U6-jme" id="Vga-p1-TaM"/>
                         <outlet property="temperatureLabel" destination="Mxw-Lb-Nfc" id="ZTt-pz-Wxu"/>
                         <outlet property="weatherContainerView" destination="mrM-PD-OW8" id="Dsk-NG-Gzh"/>

@@ -48,4 +48,10 @@ struct CurrentWeatherViewModel {
     var isEmpty: Bool {
         return self.weather == WeatherData.empty
     }
+    
+    static let invalid = CurrentWeatherViewModel(weather: .invalid)
+    
+    var isInvalid: Bool {
+        return self.weather == WeatherData.invalid
+    }
 }

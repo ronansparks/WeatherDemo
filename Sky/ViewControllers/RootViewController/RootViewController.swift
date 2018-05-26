@@ -79,7 +79,7 @@ class RootViewController: UIViewController {
         }
     }
     
-    private func fetchWeather() {
+    public func fetchWeather() {
         guard let currentLocation = currentLocation else { return }
         
         let lat = currentLocation.coordinate.latitude
@@ -101,12 +101,13 @@ class RootViewController: UIViewController {
             .disposed(by: bag)
     }
     
-    private func fetchCity() {
+    public func fetchCity() {
         guard let currentLocation = currentLocation else { return }
         
         CLGeocoder().reverseGeocodeLocation(currentLocation) { (placemarks, error) in
             if let error = error {
                 dump(error)
+                self.currentWeatherViewController.locationVM.accept(.invalid)
             }
             else if let city = placemarks?.first?.locality {
                 // Notify CurrentWeatherViewController
@@ -185,8 +186,8 @@ extension RootViewController: SettingsViewControllerDelegate {
 
 extension RootViewController: LocationsViewControllerDelegate {
     func controller(_ controller: LocationsViewController, didSelectLocation location: CLLocation) {
+        self.currentWeatherViewController.weatherVM.accept(.empty)
+        self.currentWeatherViewController.locationVM.accept(.empty)
         currentLocation = location
     }
-    
-    
 }
