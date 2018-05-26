@@ -14,8 +14,14 @@ class RootViewController: UIViewController {
     var currentWeatherViewController: CurrentWeatherViewController!
     var weekWeatherViewController: WeekWeatherViewController!
     
+    
     private let segueCurrentWeather = "SegueCurrentWeather"
     private let segueWeekWeather = "SegueWeekWeather"
+    private let segueSettings  = "SegueSettings"
+    
+    @IBAction func unwindToRootViewController(segue: UIStoryboardSegue) {
+        
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else { return }
@@ -35,7 +41,15 @@ class RootViewController: UIViewController {
             }
             
             weekWeatherViewController = destination
+        case segueSettings:
+            guard let navigationController =
+                segue.destination as? UINavigationController else { fatalError("Invalid destination view controller") }
             
+            guard let destination =
+                navigationController.topViewController as?
+                SettingsTableViewController else { fatalError("Invalid destination view controller") }
+            
+            destination.delegate = self
         default:
             break
         }
@@ -155,6 +169,21 @@ extension RootViewController: CurrentWeatherControllerDelegate {
     
     func settingsButtonPressed(controlelr: CurrentWeatherViewController) {
         print("Open settings")
+        performSegue(withIdentifier: segueSettings, sender: self)
+    }
+}
+
+extension RootViewController: SettingsViewControllerDelegate {
+    private func reloadUI() {
+        currentWeatherViewController.updateView()
+        weekWeatherViewController.updateView()
+    }
+    func controllerDidChangeTimeMode(controller: SettingsTableViewController) {
+        reloadUI()
+    }
+    
+    func controllerDidChangeTemperatureMode(controller: SettingsTableViewController) {
+        reloadUI()
     }
     
     
